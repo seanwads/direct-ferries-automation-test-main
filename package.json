@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "test": "gherkin-testcafe chrome src/steps/** src/features/* --skip-js-errors"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^10.2.1",
+    "gherkin-testcafe": "7.3.0",
+    "testcafe": "^3.6.2"
+  }
+}
