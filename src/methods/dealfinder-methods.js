@@ -13,9 +13,13 @@ module.exports = {
             .typeText(await getRoute(leg), " ") //type a space first as we sometimes have issues where the first type text doesn't register
             .typeText(await getRoute(leg), route)
             .click(await getRoute(leg))
+
+        //remove spaces from route string to get test id
+        route = route.replaceAll(' ', '');
+
         await t
-              .click(Selector('[data-testid=result-section-0] button'))
-              .scroll('top')//only needed for tablet sized screens to scroll to top after click.
+            .click(Selector(`[data-testid=${route}]`))
+            .scroll('top')//only needed for tablet sized screens to scroll to top after click.
     },
     clickSearch: async function () {
         await t.click(Selector("[data-testid=button-submit]"));
