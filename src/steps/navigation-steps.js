@@ -5,7 +5,7 @@ Given('I am on the homepage', async function () {
     await navigation.onHomepage('https://www.directferries.de');
 });
 
-Given('I am on the {string} homepage', async function (localisation) {
+Given('I am on the {string} homepage', async function (t, [localisation]) {
     let url = '';
 
     switch(localisation){
@@ -23,5 +23,9 @@ Given('I am on the {string} homepage', async function (localisation) {
             break;
     }
 
-    await navigation.onHomepage(url);
+    await navigation.onLocalisedHomepage(url);
+});
+
+Given('I am on the login page', async function () {
+    await navigation.onLoginPage();
 });
