@@ -1,9 +1,9 @@
 const { Selector, t } = require('testcafe');
 
 module.exports = {
-    onHomepage: async function () {
+    onHomepage: async function (url) {
         await t
-        .navigateTo('https://www.directferries.de')
+        .navigateTo(url)
         .click(Selector('[data-cky-tag="accept-button"]'));
     }
 }
